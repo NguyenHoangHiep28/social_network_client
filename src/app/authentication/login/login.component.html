@@ -1,0 +1,33 @@
+<div class="log-reg-area sign">
+    <h2 class="log-title">Login</h2>
+
+    <form method="post">
+        <div class="form-group" [formGroup]="angForm">	
+          <input type="text" formControlName="email" id="email"/>
+          <label class="control-label" for="email">Email</label><i class="mtrl-select"></i>
+          <p *ngIf="angForm.controls['email'].errors && (angForm.controls['email'].dirty || angForm.controls['email'].touched)">
+            <span *ngIf="angForm.controls['email'].errors['required']" class="text text-danger">Email is required!</span>
+            <span *ngIf="angForm.controls['email'].errors['email'] || angForm.controls['email'].errors['pattern']" class="text text-danger">Email is not valid!</span>
+            <span *ngIf="angForm.controls['email'].errors['maxlength']" class="text text-danger">Max length is 100 characters!</span>
+          </p>
+        </div>
+        <div class="form-group" [formGroup]="angForm">	
+          <input type="password" formControlName="password"/>
+          <label class="control-label" for="password">Password</label><i class="mtrl-select"></i>
+          <p *ngIf="angForm.controls['password'].errors && (angForm.controls['password'].dirty || angForm.controls['password'].touched)">
+            <span *ngIf="angForm.controls['password'].errors['required']" class="text text-danger">Password is required!</span>
+            <span *ngIf="angForm.controls['password'].errors['minlength'] || angForm.controls['password'].errors['maxlength']" class="text text-danger">Min length is 6 and max length is 20 characters!</span>
+          </p>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" checked="checked"/><i class="check-box"></i>Always Remember Me.
+          </label>
+        </div>
+        <a href="#" title="" class="forgot-pwd">Forgot Password?</a>
+        <div class="submit-btns">
+            <button class="mtr-btn signin" type="button" (click)="login()"><span>Login</span></button>
+            <button class="mtr-btn signup" (click)="goToRegister()"><span>Register</span></button>
+        </div>
+    </form>
+</div>
