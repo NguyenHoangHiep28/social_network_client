@@ -18,6 +18,9 @@
             <span *ngIf="angForm.controls['password'].errors['required']" class="text text-danger">Password is required!</span>
             <span *ngIf="angForm.controls['password'].errors['minlength'] || angForm.controls['password'].errors['maxlength']" class="text text-danger">Min length is 6 and max length is 20 characters!</span>
           </p>
+          <p *ngIf="errorText != ''">
+            <span class="text text-danger">{{errorText}}</span>
+          </p>
         </div>
         <div class="checkbox">
           <label>
