@@ -4,6 +4,8 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { LoginComponent } from './authentication/login/login.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { LayoutComponent } from './layout/layout.component';
+import { MainComponent } from './modules/main/main.component';
+import { ProfileComponent } from './modules/main/profile/profile.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'authenticate/login', pathMatch: 'full'},
@@ -13,7 +15,10 @@ const routes: Routes = [
       {path:'register', component:RegisterComponent}
     ]
   },
-  {path:'index', component:LayoutComponent}
+  {path:'index', component:LayoutComponent},
+  {path:'main', component:MainComponent,children : [
+    {path:'profile', component:ProfileComponent}, 
+  ]}
 ];
 
 @NgModule({
