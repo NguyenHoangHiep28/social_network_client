@@ -10,6 +10,10 @@ import { RegisterComponent } from './authentication/register/register.component'
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
+import { MainComponent } from './modules/main/main.component';
+import { ProfileComponent } from './modules/main/profile/profile.component';
+import { IndexComponent } from './modules/main/index/index.component';
+import { ShortcutsComponent } from './modules/main/shortcuts/shortcuts.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { LayoutComponent } from './layout/layout.component';
     RegisterComponent,
     HeaderComponent,
     FooterComponent,
-    LayoutComponent
+    LayoutComponent,
+    MainComponent,
+    ProfileComponent,
+    IndexComponent,
+    ShortcutsComponent
   ],
   imports: [
     BrowserModule,
