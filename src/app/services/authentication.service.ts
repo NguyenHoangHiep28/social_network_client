@@ -15,4 +15,14 @@ export class AuthenticationService {
       },observe : "response",withCredentials: true
     });
   }
+  
+  register(credetial: object) {
+    return this.http.post(this.url + '/register', JSON.stringify(credetial), {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      observe: 'response',
+      withCredentials: true,
+    });
+  }
 }

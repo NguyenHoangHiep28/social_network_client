@@ -11,15 +11,12 @@
             <span *ngIf="angForm.controls['email'].errors['maxlength']" class="text text-danger">Max length is 100 characters!</span>
           </p>
         </div>
-        <div class="form-group" [formGroup]="angForm">	
+        <div class="form-group" [formGroup]="angForm">
           <input type="password" formControlName="password"/>
           <label class="control-label" for="password">Password</label><i class="mtrl-select"></i>
           <p *ngIf="angForm.controls['password'].errors && (angForm.controls['password'].dirty || angForm.controls['password'].touched)">
             <span *ngIf="angForm.controls['password'].errors['required']" class="text text-danger">Password is required!</span>
             <span *ngIf="angForm.controls['password'].errors['minlength'] || angForm.controls['password'].errors['maxlength']" class="text text-danger">Min length is 6 and max length is 20 characters!</span>
-          </p>
-          <p *ngIf="errorText != ''">
-            <span class="text text-danger">{{errorText}}</span>
           </p>
         </div>
         <div class="checkbox">
@@ -33,4 +30,9 @@
             <button class="mtr-btn signup" (click)="goToRegister()"><span>Register</span></button>
         </div>
     </form>
+    <app-confirmation-modal #confirmationModal  [modalStyle]="modalStyle"
+    [modalTitle]="modalTitle" 
+    [modalBody]="modalBody"
+    [modalButtonColor]="modalButtonColor">
+    </app-confirmation-modal>
 </div>

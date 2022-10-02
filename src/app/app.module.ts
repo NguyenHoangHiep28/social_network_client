@@ -10,8 +10,15 @@ import { RegisterComponent } from './authentication/register/register.component'
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthenticationService } from './services/authentication.service';
+import { SharedModule } from './shared/share.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeComponent } from './pages/home/home.component';
+import { FormPostComponent } from './pages/home/form-post/form-post.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ActiveComponent } from './authentication/active/active.component';
+import { AuthInterceptor } from './http-interceptor/authInterceptor';
 
 @NgModule({
   declarations: [
@@ -21,15 +28,25 @@ import { AuthenticationService } from './services/authentication.service';
     RegisterComponent,
     HeaderComponent,
     FooterComponent,
-    LayoutComponent
+    LayoutComponent,
+    HomeComponent,
+    FormPostComponent,
+    ProfileComponent,
+    ActiveComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
+    NgbModule
   ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService, {
+    provide : HTTP_INTERCEPTORS,
+    useClass : AuthInterceptor,
+    multi : true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
