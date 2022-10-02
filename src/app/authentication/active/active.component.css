@@ -1,0 +1,17 @@
+.actice-icon {
+    width: 300px;
+    height: auto;
+}
+.wrap-timeleft {
+    background-color:#fff;
+    border:1px solid #007bff;    
+    height:50px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}

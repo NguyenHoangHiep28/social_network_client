@@ -1,60 +1,68 @@
 <div class="log-reg-area reg">
-    <h2 class="log-title">Register</h2>
-    <form method="post">
-        <div class="form-group" [formGroup]="angForm">	
-          <input type="text" formControlName="fullName"/>
-          <label class="control-label" for="input">First & Last Name</label><i class="mtrl-select"></i>
-          <p *ngIf="angForm.controls['fullName'].errors && (angForm.controls['fullName'].dirty || angForm.controls['fullName'].touched)">
-            <span *ngIf="angForm.controls['fullName'].errors['required']" class="text text-danger">Fullname is required!</span>
-            <span *ngIf="angForm.controls['fullName'].errors['minlength'] || angForm.controls['fullName'].errors['maxlength']" class="text text-danger">Min length is 6 and max length is 30 characters!</span>
-            <span *ngIf="angForm.controls['fullName'].errors['pattern']" class="text text-danger">Fullname is not valid!</span>
-          </p>
+  <h2 class="log-title">Register</h2>
+  <form method="post">
+      <div class="form-group" [formGroup]="angForm">	
+        <input type="text" formControlName="fullName"/>
+        <label class="control-label" for="input">First & Last Name</label><i class="mtrl-select"></i>
+        <p *ngIf="angForm.controls['fullName'].errors && (angForm.controls['fullName'].dirty || angForm.controls['fullName'].touched)">
+          <span *ngIf="angForm.controls['fullName'].errors['required']" class="text text-danger">Fullname is required!</span>
+          <span *ngIf="angForm.controls['fullName'].errors['minlength'] || angForm.controls['fullName'].errors['maxlength']" class="text text-danger">Min length is 6 and max length is 30 characters!</span>
+          <span *ngIf="angForm.controls['fullName'].errors['pattern']" class="text text-danger">Fullname is not valid!</span>
+        </p>
+      </div>
+      <div class="form-group" [formGroup]="angForm">	
+        <input type="email" formControlName="email" />
+        <label class="control-label" for="input">Email</label><i class="mtrl-select"></i>
+        <p *ngIf="angForm.controls['email'].errors && (angForm.controls['email'].dirty || angForm.controls['email'].touched)">
+          <span *ngIf="angForm.controls['email'].errors['required']" class="text text-danger">Email is required!</span>
+          <span *ngIf="angForm.controls['email'].errors['email'] || angForm.controls['email'].errors['pattern']" class="text text-danger">Email is not valid!</span>
+          <span *ngIf="angForm.controls['email'].errors['maxlength']" class="text text-danger">Max length is 100 characters!</span>
+        </p>
+      </div>
+      <div class="form-group"  [formGroup]="angForm">	
+        <input type="password" formControlName="password"/>
+        <label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
+        <p *ngIf="angForm.controls['password'].errors && (angForm.controls['password'].dirty || angForm.controls['password'].touched)">
+          <span *ngIf="angForm.controls['password'].errors['required']" class="text text-danger">Password is required!</span>
+          <span *ngIf="angForm.controls['password'].errors['minlength'] || angForm.controls['password'].errors['maxlength']" class="text text-danger">Min length is 6 and max length is 20 characters!</span>
+        </p>
+      </div>
+      <div class="form-group" [formGroup]="angForm">	
+          <input type="password" formControlName="confirmPassword"/>
+          <label class="control-label" for="input">Confirm Password</label><i class="mtrl-select"></i>
+          <p *ngIf="angForm.controls['confirmPassword'].errors && (angForm.controls['confirmPassword'].dirty || angForm.controls['confirmPassword'].touched)">
+              <span *ngIf="angForm.controls['confirmPassword'].errors['required']" class="text text-danger">Confirm Password is required!</span>
+              <span *ngIf="angForm.controls['confirmPassword'].errors['mustMatch']" class="text text-danger">Confirm password does not match!</span>
+            </p>
         </div>
-        <div class="form-group" [formGroup]="angForm">	
-          <input type="email" formControlName="email" />
-          <label class="control-label" for="input">Email</label><i class="mtrl-select"></i>
-          <p *ngIf="angForm.controls['email'].errors && (angForm.controls['email'].dirty || angForm.controls['email'].touched)">
-            <span *ngIf="angForm.controls['email'].errors['required']" class="text text-danger">Email is required!</span>
-            <span *ngIf="angForm.controls['email'].errors['email'] || angForm.controls['email'].errors['pattern']" class="text text-danger">Email is not valid!</span>
-            <span *ngIf="angForm.controls['email'].errors['maxlength']" class="text text-danger">Max length is 100 characters!</span>
-          </p>
-        </div>
-        <div class="form-group"  [formGroup]="angForm">	
-          <input type="password" formControlName="password"/>
-          <label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
-          <p *ngIf="angForm.controls['password'].errors && (angForm.controls['password'].dirty || angForm.controls['password'].touched)">
-            <span *ngIf="angForm.controls['password'].errors['required']" class="text text-danger">Password is required!</span>
-            <span *ngIf="angForm.controls['password'].errors['minlength'] || angForm.controls['password'].errors['maxlength']" class="text text-danger">Min length is 6 and max length is 20 characters!</span>
-          </p>
-        </div>
-        <div class="form-group" [formGroup]="angForm">	
-            <input type="password" formControlName="confirmPassword"/>
-            <label class="control-label" for="input">Confirm Password</label><i class="mtrl-select"></i>
-            <p *ngIf="angForm.controls['confirmPassword'].errors && (angForm.controls['confirmPassword'].dirty || angForm.controls['confirmPassword'].touched)">
-                <span *ngIf="angForm.controls['confirmPassword'].errors['required']" class="text text-danger">Confirm Password is required!</span>
-                <span *ngIf="angForm.controls['confirmPassword'].errors['mustMatch']" class="text text-danger">Confirm password does not match!</span>
-              </p>
-          </div>
-        <div class="form-radio">
-          <div class="radio">
-            <label>
-              <input type="radio" name="radio" checked="checked"/><i class="check-box"></i>Male
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="radio"/><i class="check-box"></i>Female
-            </label>
-          </div>
-        </div>
-        <div class="checkbox">
+      <div class="form-radio">
+        <div class="radio" [formGroup]="angForm">
           <label>
-            <input type="checkbox" checked="checked"/><i class="check-box"></i>Accept Terms & Conditions ?
+            <input type="radio" value="0" formControlName="gender" name="gender" checked="checked"/><i class="check-box"></i>Male
           </label>
         </div>
-        <a [routerLink]="['/authenticate/login']" title="" class="already-have">Already have an account</a>
-        <div class="submit-btns">
-            <button class="mtr-btn signup" (click)="register()" type="button"><span>Register</span></button>
+        <div class="radio" [formGroup]="angForm">
+          <label>
+            <input type="radio" value="1" name="gender" formControlName="gender"/><i class="check-box"></i>Female
+          </label>
         </div>
-    </form>
+        <p *ngIf="angForm.controls['gender'].errors && (angForm.controls['gender'].dirty || angForm.controls['gender'].touched)">
+          <span *ngIf="angForm.controls['gender'].errors['required']" class="text text-danger">Gender is required!</span>
+        </p>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" checked="checked"/><i class="check-box"></i>Accept Terms & Conditions ?
+        </label>
+      </div>
+      <a [routerLink]="['/authenticate/login']" title="" class="already-have">Already have an account</a>
+      <div class="submit-btns">
+          <button class="mtr-btn signup" (click)="register()" type="button"><span>Register</span></button>
+      </div>
+  </form>
+  <app-confirmation-modal #confirmationModal (newConfirmationEvent)="getConfirmationValue($event)" [modalStyle]="modalStyle"
+[modalTitle]="modalTitle" 
+[modalBody]="modalBody"
+[modalButtonColor]="modalButtonColor">
+</app-confirmation-modal>
 </div>

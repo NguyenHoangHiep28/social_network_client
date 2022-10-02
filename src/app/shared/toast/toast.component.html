@@ -1,0 +1,14 @@
+<ngb-toast
+  *ngFor="let toast of toastService.toasts"
+  [autohide]="true"
+  [delay]="toast.delay || 3000"
+  [class]="toast.classname || 'bg-primary text-light'"
+  (hiddden)="toastService.remove(toast)"
+>
+  <ng-template ngbToastHeader *ngIf="toast.header">
+    <div class="me-auto">
+      <strong class="mx-1 text-primary">{{ toast.header }}</strong>
+    </div>
+  </ng-template>
+  {{ toast.body }}
+</ngb-toast>
