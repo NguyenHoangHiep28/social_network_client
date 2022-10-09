@@ -13,7 +13,7 @@ export class ActiveComponent implements OnInit {
   timeLeft: number = 5;
   interval: any;
   confirmToken: string = '';
-  private url = 'http://localhost:8080/winku/api/v1/register/confirm';
+  private url = 'https://winku-social-network-server.herokuapp.com/winku/api/v1/register/confirm';
 
   startTimer() {
     this.interval = setInterval(() => {

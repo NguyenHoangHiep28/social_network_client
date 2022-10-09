@@ -1,0 +1,23 @@
+.post__scope {
+  background-color: #dabcaa;
+  color: #5f6162;
+  border: 0 none;
+  border-radius: 20px;
+  padding: 6px 20px;
+}
+.upload_image_list {
+  display: flex;
+}
+
+.upload_image_item {
+  position: relative;
+}
+.upload_photo {
+  height: 100px ;
+  width: auto;
+}
+
+
+
+
+
