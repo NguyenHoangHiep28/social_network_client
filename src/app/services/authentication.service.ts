@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private url = "http://localhost:8080/winku/api/v1";
+  private url = "https://winku-social-network-server.herokuapp.com/winku/api/v1";
 
   constructor(private http:HttpClient) { }
   login(credential : object) {

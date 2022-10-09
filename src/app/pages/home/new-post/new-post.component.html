@@ -1,0 +1,64 @@
+<div class="central-meta">
+  <div class="new-postbox">
+    <figure>
+      <img src="../../../assets/images/resources/admin2.jpg" alt="" />
+    </figure>
+    <div class="newpst-input">
+      <form method="post">
+        <textarea rows="2" placeholder="write something"></textarea>
+        <div class="attachments">
+          <ul>
+            <li>
+              <select class="post__scope">
+                <option selected>Public</option>
+                <option value="1">Friend</option>
+                <option value="2">Private</option>
+              </select>
+            </li>
+            <li>
+              <i class="fa fa-music"></i>
+              <label class="fileContainer">
+                <input type="file" />
+              </label>
+            </li>
+            <li>
+              <i class="fa fa-image"></i>
+              <label class="fileContainer">
+                <input type="file" />
+              </label>
+            </li>
+            <li>
+              <i class="fa fa-video-camera"></i>
+              <label class="fileContainer">
+                <input type="file" data-toggle="tooltip" title="video" />
+              </label>
+            </li>
+            <li>
+              <i class="fa fa-camera"></i>
+              <label class="fileContainer">
+                <input
+                  type="file"
+                  data-toggle="tooltip"
+                  title="image"
+                  (change)="onFileSelected($event)"
+                  #fileUpload
+                />
+              </label>
+            </li>
+            <li>
+              <button type="submit" [disabled]>Post</button>
+            </li>
+          </ul>
+        </div>
+      </form>
+      <div class="mt-5">
+        <div class="row">
+          <div class="upload_image_list">
+            <div class="upload_image_item" *ngFor="let image of uploadImages">
+              <img [src]="image.url" class="upload_photo" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

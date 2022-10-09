@@ -15,10 +15,10 @@ import { AuthenticationService } from './services/authentication.service';
 import { SharedModule } from './shared/share.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './pages/home/home.component';
-import { FormPostComponent } from './pages/home/form-post/form-post.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ActiveComponent } from './authentication/active/active.component';
 import { AuthInterceptor } from './http-interceptor/authInterceptor';
+import { NewPostComponent } from './pages/home/new-post/new-post.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +30,9 @@ import { AuthInterceptor } from './http-interceptor/authInterceptor';
     FooterComponent,
     LayoutComponent,
     HomeComponent,
-    FormPostComponent,
     ProfileComponent,
-    ActiveComponent
+    ActiveComponent,
+    NewPostComponent,
   ],
   imports: [
     BrowserModule,
