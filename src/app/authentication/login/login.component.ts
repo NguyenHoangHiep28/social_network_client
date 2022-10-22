@@ -12,6 +12,7 @@ import { ConfirmationModalComponent } from 'src/app/shared/confirmation-modal/co
 export class LoginComponent implements OnInit {
   angForm: FormGroup;
   @ViewChild('confirmationModal')
+  
   private modalComponent!: ConfirmationModalComponent;
   modalStyle: string = 'modal-style-primary';
   modalTitle: string = 'Login Failed';

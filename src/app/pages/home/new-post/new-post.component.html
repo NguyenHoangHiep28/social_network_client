@@ -4,16 +4,25 @@
       <img src="../../../assets/images/resources/admin2.jpg" alt="" />
     </figure>
     <div class="newpst-input">
-      <form method="post">
-        <textarea rows="2" placeholder="write something"></textarea>
+      <form method="post" [formGroup]="postForm" (ngSubmit)="onFormSubmit()">
+        <textarea
+          rows="2"
+          placeholder="write something"
+          formControlName="content"
+        ></textarea>
         <div class="attachments">
           <ul>
             <li>
-              <select class="post__scope">
-                <option selected>Public</option>
-                <option value="1">Friend</option>
-                <option value="2">Private</option>
-              </select>
+              <div>
+                <select class="post__scope" formControlName="scope">
+                  <option
+                    *ngFor="let userScope of postScope"
+                    [ngValue]="userScope.type"
+                  >
+                    {{ userScope.name }}
+                  </option>
+                </select>
+              </div>
             </li>
             <li>
               <i class="fa fa-music"></i>
@@ -37,6 +46,8 @@
               <i class="fa fa-camera"></i>
               <label class="fileContainer">
                 <input
+                  multiple
+                  accept=".png, .jpg, .jpeg"
                   type="file"
                   data-toggle="tooltip"
                   title="image"
@@ -46,7 +57,13 @@
               </label>
             </li>
             <li>
-              <button type="submit" [disabled]>Post</button>
+              <button
+                type="submit"
+                [disabled]="postForm.invalid"
+                [ngClass]="{ 'btn--disable': postForm.invalid }"
+              >
+                Post
+              </button>
             </li>
           </ul>
         </div>
@@ -54,9 +71,26 @@
       <div class="mt-5">
         <div class="row">
           <div class="upload_image_list">
-            <div class="upload_image_item" *ngFor="let image of uploadImages">
+            <div
+              class="upload_image_item"
+              *ngFor="let image of uploadImages; let i = index"
+            >
               <img [src]="image.url" class="upload_photo" />
+              <span
+                href=""
+                class="upload_image--remove"
+                (click)="removeImages(i)"
+                >x</span
+              >
+            </div>
           </div>
+
+          <!-- //upload post handle           -->
+          <p>Upload Percent: {{percentDone}}% </p> <br />
+          <ng-container *ngIf="uploadSuccess" class="success">
+            <p class="sucess">Upload Successful</p>
+          </ng-container>
+          <!--  -->
         </div>
       </div>
     </div>
