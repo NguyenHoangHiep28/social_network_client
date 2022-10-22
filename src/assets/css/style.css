@@ -3790,6 +3790,19 @@ form .form-group.half {
     width: 46%;
 }
 
+/* overrrid css */
+.chosen-container {
+    display: none;
+}
+
+
+  .btn--disable :disabled {
+ background:  #fff;
+   color: #ccc;
+   cursor: no-drop;
+  }
+
+
 form .form-group.half {
     float: left;
     margin-right: 10px;
