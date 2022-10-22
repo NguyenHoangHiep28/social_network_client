@@ -11,7 +11,8 @@ export class PostService {
   uploadPost(formData : FormData) {
     return this.http.post(this.url +"/posts",formData,{
       reportProgress : true,
-      observe : 'events'
+      observe : 'events',
+      withCredentials: true
     })
   }
 }
