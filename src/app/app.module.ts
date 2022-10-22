@@ -35,12 +35,13 @@ import { NewPostComponent } from './pages/home/new-post/new-post.component';
     NewPostComponent,
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     SharedModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [AuthenticationService, {
     provide : HTTP_INTERCEPTORS,

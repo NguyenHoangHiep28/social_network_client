@@ -1,21 +1,56 @@
 .post__scope {
-  background-color: #dabcaa;
-  color: #5f6162;
+  background-color: #088dcd;
+  color: #fff;
   border: 0 none;
   border-radius: 20px;
   padding: 6px 20px;
+  display: block !important;
 }
 .upload_image_list {
   display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
 
 .upload_image_item {
   position: relative;
+  border: 1px solid #eee;
+  flex : 0 0 150px;
+  margin: 10px;
 }
 .upload_photo {
-  height: 100px ;
   width: auto;
+  height: 100%;
+  object-fit: cover;
 }
+
+.upload_image--remove {
+  color : #999;
+  position: absolute;
+  right: -10px;
+  top : -10px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #088dcd;
+  color: white;
+  border-radius: 50%;
+  height: auto;
+  width: 20px;
+  text-align: center;
+}
+
+.btn--disable:disabled {
+  background:  #fff;
+  color: #ccc;
+  cursor: no-drop;
+}
+
+
+
+
+
+
 
 
 
