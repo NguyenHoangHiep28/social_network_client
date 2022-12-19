@@ -1,0 +1,122 @@
+<div>
+    <div style="width:100%;height:100px;display:flex;background-color:rgb(26, 24, 52);">
+        <div style="width:80%;margin-top: 1%;">
+            <span class="animate-charcter" style="font-size:40px;color:rgb(250, 250, 250);margin-left: 8%;">
+                DASHBOARD
+            </span>
+        </div>
+        <div style="width:20%;color:aliceblue;margin-top: 30px;display:flex">
+
+            <div style="width:20%;margin-top:2px">
+                <span>Admin</span> <br>
+                <span>
+                    <i class="ti-power-off"></i>
+                    <a href="landing.html" title="">Logout</a>
+                </span>
+            </div>
+            <div class="new-postbox" style="width:20%">
+                <figure style="width: 30%;">
+                    <img src="../../../assets/images/resources/admin2.jpg" alt="" />
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <div class="gap2 gray-bg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row merged20" id="page-contents">
+                        <div class="col-lg-3">
+                            <aside class="sidebar static left">
+                                <div class="widget">
+                                    <h4 class="widget-title">System management</h4>
+                                    <ul class="naves">
+                                        <li>
+                                            <i class="ti-clipboard"></i>
+                                            <a href="dashboard" title="">Manager category</a>
+                                        </li>
+                                        <li>
+                                            <i class="ti-mouse-alt"></i>
+                                            <a href="collection" title="">Manager account</a>
+                                        </li>
+                                        <li>
+                                            <i class="ti-files"></i>
+                                            <a href="fav-page.html" title="">My pages</a>
+                                        </li>
+                                        <li>
+                                            <i class="ti-user"></i>
+                                            <a href="timeline-friends.html" title="">friends</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <!-- Shortcuts -->
+                                <div class="widget">
+                                    <h4 class="widget-title">Recent Activity</h4>
+                                    <ul class="activitiez">
+                                        <li>
+                                            <div class="activity-meta">
+                                                <i>10 hours Ago</i>
+                                                <span><a href="#" title="">Commented on Video posted
+                                                    </a></span>
+                                                <h6>by <a href="time-line.html">black demon.</a></h6>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="activity-meta">
+                                                <i>30 Days Ago</i>
+                                                <span><a href="#" title="">Posted your status. “Hello guys, how are
+                                                        you?”</a></span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="activity-meta">
+                                                <i>2 Years Ago</i>
+                                                <span><a href="#" title="">Share a video on her timeline.</a></span>
+                                                <h6>"<a href="#">you are so funny mr.been.</a>"</h6>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </aside>
+                        </div>
+                        <!-- sidebar -->
+
+
+                        <div class="container-fluid" style="width:75%">
+
+                            <!-- Page Heading -->
+                            <h1 class="h3 mb-2 text-gray-800">Add new category</h1>
+
+
+                            <!-- DataTales Example -->
+                            <div class="card shadow mb-2">
+                                <div class="card-body" style="padding-left: 20%">
+                                    <div style="width:80%;padding-left:5%;background-color: rgb(248, 248, 248);">
+                                        <form [formGroup]="myForm" (ngSubmit)="submit()" class="user">
+                                            <br>
+                                            <div style="padding-top: 25px;width:100%">
+                                                <input style="width:80%" formControlName="name" type="text"
+                                                    placeholder="Name category" name="name">
+                                            </div>
+                                            <div style="padding-top: 25px;width:100%">
+                                                <input formControlName="image" style="width:80%" type="file"
+                                                    (change)="onFileChange($event)">>
+                                            </div>
+                                            <div class="flex justify-center" style="width:120px;padding-top: 30px;">
+                                                <button type="submit"
+                                                    class="btn btn-primary btn-user btn-block">Create</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

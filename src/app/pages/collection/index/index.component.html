@@ -1,0 +1,67 @@
+<div class="central-meta" style="height:100%">
+    <div class="new-postbox">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 text-gray-800">List account</h1>
+            <select>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="30">30</option>
+            </select>
+            <div class="input-group">
+
+                <div class="form-outline" style="width:90%;padding-left: 30%;">
+                    <!-- <input [(ngModel)]="txtSearch" id="search-focus" type="search" id="form1" class="form-control" /> -->
+                    <input [formControl]="txtSearch" id="search-focus" type="search" id="form1" class="form-control" />
+
+                    <!-- <label class="form-label" for="form1">Search</label> -->
+                </div>
+                <button (click)="searchItem()" type="button"
+                    style="color:rgb(255, 255, 255);background-color: rgb(26, 24, 52)"
+                    class="btn btn-primary">Search</button>
+            </div>
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Size</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </select>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" style="text-align: center" id="dataTable" width="100%"
+                            cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="width:10%">STT</th>
+                                    <th style="width:15%">createdAt</th>
+                                    <th style="width:15%">walletAddress</th>
+                                    <th style="width:30%">name</th>
+                                    <th style="width:15%">avatar</th>
+                                    <th style="width:205%">email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of dataCate,index as i">
+                                    <th style="width:10%;text-align: center; padding-top: 6%;">{{i+1}}</th>
+                                    <th style="width:15%;text-align: center; padding-top: 6%;">{{item.createdAt}}</th>
+                                    <th style="width:25%;text-align: center; padding-top: 6%;">{{item.walletAddress}}
+                                    </th>
+                                    <th style="width:25%;text-align: center; padding-top: 6%;">{{item.name}}</th>
+                                    <th style=""><img src="{{item.avatar}}"></th>
+                                    <th style="width:25%;text-align: center; padding-top: 6%;">{{item.email}}</th>
+                                    <!-- <td style="text-align: center"><button class="edit-button-table" mat-icon-button
+                                            (click)="rowShow(item)" style="color: #337ab7;">
+                                            <i class="material-icons">remove_red_eye</i>
+                                        </button>
+                                    </td> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

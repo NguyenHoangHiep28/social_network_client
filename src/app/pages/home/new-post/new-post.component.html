@@ -1,98 +1,91 @@
-<div class="central-meta">
-  <div class="new-postbox">
-    <figure>
-      <img src="../../../assets/images/resources/admin2.jpg" alt="" />
-    </figure>
-    <div class="newpst-input">
-      <form method="post" [formGroup]="postForm" (ngSubmit)="onFormSubmit()">
-        <textarea
-          rows="2"
-          placeholder="write something"
-          formControlName="content"
-        ></textarea>
-        <div class="attachments">
-          <ul>
-            <li>
-              <div>
-                <select class="post__scope" formControlName="scope">
-                  <option
-                    *ngFor="let userScope of postScope"
-                    [ngValue]="userScope.type"
-                  >
-                    {{ userScope.name }}
-                  </option>
-                </select>
-              </div>
-            </li>
-            <li>
-              <i class="fa fa-music"></i>
-              <label class="fileContainer">
-                <input type="file" />
-              </label>
-            </li>
-            <li>
-              <i class="fa fa-image"></i>
-              <label class="fileContainer">
-                <input type="file" />
-              </label>
-            </li>
-            <li>
-              <i class="fa fa-video-camera"></i>
-              <label class="fileContainer">
-                <input type="file" data-toggle="tooltip" title="video" />
-              </label>
-            </li>
-            <li>
-              <i class="fa fa-camera"></i>
-              <label class="fileContainer">
-                <input
-                  multiple
-                  accept=".png, .jpg, .jpeg"
-                  type="file"
-                  data-toggle="tooltip"
-                  title="image"
-                  (change)="onFileSelected($event)"
-                  #fileUpload
-                />
-              </label>
-            </li>
-            <li>
-              <button
-                type="submit"
-                [disabled]="postForm.invalid"
-                [ngClass]="{ 'btn--disable': postForm.invalid }"
-              >
-                Post
-              </button>
-            </li>
-          </ul>
-        </div>
-      </form>
-      <div class="mt-5">
-        <div class="row">
-          <div class="upload_image_list">
-            <div
-              class="upload_image_item"
-              *ngFor="let image of uploadImages; let i = index"
-            >
-              <img [src]="image.url" class="upload_photo" />
-              <span
-                href=""
-                class="upload_image--remove"
-                (click)="removeImages(i)"
-                >x</span
-              >
-            </div>
-          </div>
+<div>
+  <div style="width:100%;height:100px;display:flex;background-color:rgb(26, 24, 52);">
+    <div style="width:80%;margin-top: 1%;">
+      <span class="animate-charcter" style="font-size:40px;color:rgb(250, 250, 250);margin-left: 8%;">
+        DASHBOARD
+      </span>
+    </div>
+    <div style="width:20%;color:aliceblue;margin-top: 30px;display:flex">
 
-          <!-- //upload post handle           -->
-          <p>Upload Percent: {{percentDone}}% </p> <br />
-          <ng-container *ngIf="uploadSuccess" class="success">
-            <p class="sucess">Upload Successful</p>
-          </ng-container>
-          <!--  -->
-        </div>
+      <div style="width:40%;margin-top:2px">
+        <span>Nguyễn Công Luật</span> <br>
+        <span>
+          <i class="ti-power-off"></i>
+          <a href="landing.html" title="">Logout</a>
+        </span>
+      </div>
+      <div class="new-postbox" style="width:20%">
+        <figure style="width: 30%;">
+          <img src="../../../assets/images/resources/admin2.jpg" alt="" />
+        </figure>
       </div>
     </div>
   </div>
 </div>
+<section>
+  <div class="gap2 gray-bg">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row merged20" id="page-contents">
+            <div class="col-lg-3">
+              <aside class="sidebar static left">
+                <div class="widget">
+                  <h4 class="widget-title">System management</h4>
+                  <ul class="naves">
+                    <li>
+                      <i class="ti-clipboard"></i>
+                      <a href="dashboard" title="">Manager category</a>
+                    </li>
+                    <li>
+                      <i class="ti-mouse-alt"></i>
+                      <a href="collection" title="">Manager collection</a>
+                    </li>
+                    <li>
+                      <i class="ti-files"></i>
+                      <a href="fav-page.html" title="">My pages</a>
+                    </li>
+                    <li>
+                      <i class="ti-user"></i>
+                      <a href="timeline-friends.html" title="">friends</a>
+                    </li>
+
+                  </ul>
+                </div>
+                <!-- Shortcuts -->
+                <div class="widget">
+                  <h4 class="widget-title">Recent Activity</h4>
+                  <ul class="activitiez">
+                    <li>
+                      <div class="activity-meta">
+                        <i>10 hours Ago</i>
+                        <span><a href="#" title="">Commented on Video posted
+                          </a></span>
+                        <h6>by <a href="time-line.html">black demon.</a></h6>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="activity-meta">
+                        <i>30 Days Ago</i>
+                        <span><a href="#" title="">Posted your status. “Hello guys, how are
+                            you?”</a></span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="activity-meta">
+                        <i>2 Years Ago</i>
+                        <span><a href="#" title="">Share a video on her timeline.</a></span>
+                        <h6>"<a href="#">you are so funny mr.been.</a>"</h6>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+            <app-create></app-create>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

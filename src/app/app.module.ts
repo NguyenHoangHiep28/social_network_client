@@ -19,6 +19,12 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ActiveComponent } from './authentication/active/active.component';
 import { AuthInterceptor } from './http-interceptor/authInterceptor';
 import { NewPostComponent } from './pages/home/new-post/new-post.component';
+import { CreateComponent } from './pages/home/create/create.component';
+import { CollectionComponent } from './pages/collection/collection.component';
+import { IndexComponent } from './pages/collection/index/index.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { HomeModel } from './pages/home/models/HomeModel';
 
 @NgModule({
   declarations: [
@@ -33,21 +39,25 @@ import { NewPostComponent } from './pages/home/new-post/new-post.component';
     ProfileComponent,
     ActiveComponent,
     NewPostComponent,
+    CreateComponent,
+    CollectionComponent,
+    IndexComponent
   ],
   imports: [
-
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     SharedModule,
     NgbModule,
+    CommonModule,
   ],
   providers: [AuthenticationService, {
-    provide : HTTP_INTERCEPTORS,
-    useClass : AuthInterceptor,
-    multi : true,
-  }],
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  }, HomeModel],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
