@@ -98,15 +98,18 @@
                                         <form [formGroup]="myForm" (ngSubmit)="submit()" class="user">
                                             <br>
                                             <div style="padding-top: 25px;width:100%">
-                                                <input style="width:80%" formControlName="name" type="text"
+                                                <input style="width:80%" [(ngModel)]="value.categoryName"formControlName="name" type="text"
                                                     placeholder="Name category" name="name">
                                             </div>
                                             <div style="padding-top: 25px;width:100%">
-                                                <input formControlName="image" style="width:80%" type="file"
-                                                    (change)="onFileChange($event)">>
+                                                <input  formControlName="image" style="width:80%" type="file"
+                                                    (change)="onFileChange($event)">
+                                            </div>
+                                            <div>
+                                                <img width="20%" src="{{value.categoryImage}}">
                                             </div>
                                             <div class="flex justify-center" style="width:120px;padding-top: 30px;">
-                                                <button type="submit"
+                                                <button type="submit" style="background-color: rgb(26, 24, 52);"
                                                     class="btn btn-primary btn-user btn-block">Create</button>
                                             </div>
                                         </form>

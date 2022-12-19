@@ -59,7 +59,5 @@ export class HomeComponent implements OnInit {
         this.dataCate = res.body
       })
   }
-  edit(id: number) {
-    console.log(id)
-  }
+
 }

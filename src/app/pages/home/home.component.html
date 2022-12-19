@@ -82,7 +82,7 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">List category</h1>
                     <div style="padding-left: 90%">
-                      <button type="button" style="background-color:rgb(95, 179, 53);" class="btn btn-primary"> <a
+                      <button type="button" style="background-color:rgb(40, 77, 40);" class="btn btn-primary"> <a
                           href="dashboard/create">Add new</a></button>
                     </div>
 
@@ -96,19 +96,19 @@
                             cellspacing="0">
                             <thead>
                               <tr>
-                                <!-- <th style="width:10%">STT</th> -->
-                                <th style="width:15%">Category ID</th>
-                                <th style="width:35%">Name</th>
+                                <th style="width:10%">STT</th>
+                                <!-- <th style="width:15%">Category ID</th> -->
+                                <th style="width:20%">Name</th>
                                 <th style="width:20%">Image</th>
                                 <th style="width:20%">Time create</th>
-                                <th style="width:10%">#</th>
+                                <th style="width:20%">#</th>
                               </tr>
                             </thead>
                             <tbody>
 
                               <tr *ngFor="let item of dataCate,index as i">
-                                <!-- <th style="text-align: center; padding-top: 6%;">{{i+1}}</th> -->
-                                <th style="text-align: center; padding-top: 6%;">{{item.categoryId}}</th>
+                                <th style="text-align: center; padding-top: 6%;">{{i+1}}</th>
+                                <!-- <th style="text-align: center; padding-top: 6%;">{{item.categoryId}}</th> -->
                                 <th style="text-align: center; padding-top: 6%;">{{item.categoryName}}</th>
                                 <th style="width:100px;height:100px"><img width="60%" src="{{item.categoryImage}}"></th>
                                 <th style="text-align: center; padding-top: 6%;">{{item.createdAt}}</th>
@@ -117,8 +117,12 @@
                                     (click)="edit(item.categoryId)" style="color: #337ab7;">
                                     <i class="material-icons">edit</i>
                                   </button> -->
-                                  <button type="button" style="background-color:rgb(26, 24, 52)"
-                                    class="btn btn-primary">Edit</button>
+                                  <button type="button" style="background-color:rgb(26, 24, 52); width:40%"
+                                    class="btn btn-primary"> <a
+                                      [routerLink]="['/dashboard/create',item.categoryId]">Edit</a> </button>
+                                  <span style="padding: 2%;"> </span>
+                                  <button type="button" style="background-color:rgb(185, 77, 77);width:40%"
+                                    class="btn btn-primary">Delete</button>
 
                                 </th>
                               </tr>
