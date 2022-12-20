@@ -31,28 +31,33 @@
                 </select>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered" style="text-align: center" id="dataTable" width="100%"
-                            cellspacing="0">
+                        <table class="table table-bordered" style="text-align: center" id="dataTable" cellspacing="0">
+                            <colgroup>
+                                <col width="5%">
+                                <col width="10%">
+                                <col width="15%">
+                                <col width="15%">
+                                <col width="25%">
+                                <col width="15%">
+                            </colgroup>
                             <thead>
-                                <tr>
-                                    <th style="width:5%">STT</th>
-                                    <th style="width:10%">createdAt</th>
-                                    <th style="width:15%">walletAddress</th>
-                                    <th style="width:20%">name</th>
-                                    <th style="width:30%">avatar</th>
-                                    <th style="width:15%">email</th>
-                                </tr>
+                                <th>Id</th>
+                                <th>createdAt</th>
+                                <th>walletAddress</th>
+                                <th>name</th>
+                                <th>avatar</th>
+                                <th>email</th>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let item of dataCate,index as i">
-                                    <th style="width:10%;text-align: center; padding-top: 3%;">{{i+1}}</th>
-                                    <th style="width:15%;text-align: center; padding-top: 3%;">{{item.createdAt}}</th>
-                                    <th style="width:25%;text-align: center; padding-top: 3%;">{{item.walletAddress}}
-                                    </th>
-                                    <th style="width:85%;text-align: center; padding-top: 3%;">{{item.name}}</th>
-                                    <th style="width:30%;text-align: center; padding-top: 3%"><img src="{{item.avatar}}"></th>
-                                    <th style="width:25%;text-align: center; padding-top: 3%;">{{item.email}}</th>
-                                    <!-- <td style="text-align: center"><button class="edit-button-table" mat-icon-button
+                                    <td class="box" style="text-align: center; padding-top: 3%;">{{i+1}}</td>
+                                    <td class="box" style="text-align: center; padding-top: 3%;">{{item.createdAt}}</td>
+                                    <td class="box" style="text-align: center; padding-top: 3%;">{{item.walletAddress}}
+                                    </td>
+                                    <td class="box" style="text-align: center; padding-top: 3%;">{{item.name}}</td>
+                                    <td class="box" style="text-align: center; padding-top: 3%"><img src="{{item.avatar}}"></td>
+                                    <td class="box" style="text-align: center; padding-top: 3%;">{{item.email}}</td>
+                                    <!-- <td class="box" style="text-align: center"><button class="edit-button-table" mat-icon-button
                                             (click)="rowShow(item)" style="color: #337ab7;">
                                             <i class="material-icons">remove_red_eye</i>
                                         </button>

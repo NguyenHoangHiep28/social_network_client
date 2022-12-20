@@ -16,6 +16,9 @@
     display: inline-block;
     font-size: 190px;
 }
+.naves .active{
+    color: #007bff;
+}
 
 @keyframes textclip {
     to {

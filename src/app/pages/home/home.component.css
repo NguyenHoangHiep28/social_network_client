@@ -22,3 +22,6 @@
         background-position: 200% center;
     }
 }
+.naves .active{
+    color: #007bff;
+}
